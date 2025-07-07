@@ -1,16 +1,26 @@
+
+
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import org.testng.annotations.Test;
 
-public class e2e {
+
+public class e2eTest {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
 		
+		
+	}
+		
+		
+	@Test
+	public void endtoendtest() throws InterruptedException {
+		
+	
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.spicejet.com");
 		driver.manage().window().maximize();
@@ -20,6 +30,7 @@ public class e2e {
 		driver.findElement(By.xpath("//div[@class='r-1862ga2 r-1loqt21 r-1enofrn r-tceitz r-u8s1d css-76zvg2' and text()='From']")).click();
 		
 		driver.findElement(By.xpath("//div[@class='css-76zvg2 r-1xedbs3 r-ubezar' and text()='AGR']")).click();
+		Thread.sleep(2000);
 		
 		List<WebElement> options = driver.findElements(By.xpath("//div[@class='css-76zvg2 r-1xedbs3 r-ubezar']"));
 		
@@ -32,7 +43,7 @@ public class e2e {
 		
 				
 		driver.findElement(By.xpath("//div[@class='css-76zvg2 r-jwli3a r-ubezar r-16dba41' and @dir='auto']")).click();
-		
+				
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[contains(text(),'Passengers')]")).click();
 		Thread.sleep(2000);
@@ -52,7 +63,6 @@ public class e2e {
 //		Assert.assertFalse(driver.findElement(By.xpath("//div[@class='css-76zvg2 r-cqee49 r-1enofrn r-1ozqkpa' and text()='Family & Friends']")).isSelected());
 //		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@class='css-1dbjc4n r-1awozwy r-z2wwpe r-1loqt21 r-18u37iz r-1777fci r-d9fdf6 r-1w50u8q r-ah5dr5 r-1otgn73']")).click();
-		
+	}
 		
 	}
-}
