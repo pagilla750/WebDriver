@@ -1,16 +1,22 @@
+
+
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 public class dynamicDropdown {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions chromeoptions = new ChromeOptions();
+		chromeoptions.addArguments("--headless");
+		
+		
+		WebDriver driver = new ChromeDriver(chromeoptions);
 		driver.get("https://www.spicejet.com");
 		driver.manage().window().maximize();
 		Thread.sleep(4000);
